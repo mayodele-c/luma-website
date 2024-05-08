@@ -1,0 +1,17 @@
+{
+  "homePage": {
+    "homePageMsg": "div[class ='message global demo'] p",
+    "createAccount": "li [href='https://magento.softwaretestingboard.com/customer/account/create/']"
+  },
+  "createAccountPage": {
+    "createAccountPageMsg": "[class = 'page-title'] span[class = 'base']",
+    "firstName": "#firstname",
+    "lastName": "#lastname",
+    "email": "#email_address",
+    "password": "#password",
+    "confirmPassword": "#password-confirmation",
+    "createAccountButton" : "button[title='Create an Account'] span"
+
+  
+  }
+}
