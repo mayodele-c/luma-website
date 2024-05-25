@@ -14,11 +14,11 @@ before(()  => {
 })
 
 
-Cypress.Commands.add('homepage', () => {
+Cypress.Commands.add('landingPage', () => {
 
 
-    cy.get(sel.homePage.homePageMsg).should('have.text', 'This is a demo store to test your test automaiton scripts. No orders will be fulfilled. If you are facing any issue, email us at hello@softwaretestingboard.com.')
-    cy.get(sel.homePage.createAccount).eq(0).click()
+    cy.get(sel.landingPage.landingPageMsg).should('have.text', 'This is a demo store to test your test automaiton scripts. No orders will be fulfilled. If you are facing any issue, email us at hello@softwaretestingboard.com.')
+    cy.get(sel.landingPage.createAccount).eq(0).click()
 })
 
 Cypress.Commands.add('createAccount', () => {
@@ -30,6 +30,14 @@ Cypress.Commands.add('createAccount', () => {
     cy.get(sel.createAccountPage.password).type('Aa1234!#')
     cy.get(sel.createAccountPage.confirmPassword).type('Aa1234!#')
     cy.get(sel.createAccountPage.createAccountButton).click()
+
+
+})
+
+Cypress.Commands.add('homePage', () => {
+    cy.get(sel.homePage.whatIsNew).click()
+    cy.get(sel.homePage.hoodAndSwtshrt).eq(1).click({force: true})
+    
 
 
 })

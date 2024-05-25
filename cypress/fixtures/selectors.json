@@ -1,6 +1,6 @@
 {
-  "homePage": {
-    "homePageMsg": "div[class ='message global demo'] p",
+  "landingPage": {
+    "landingPageMsg": "div[class ='message global demo'] p",
     "createAccount": "li [href='https://magento.softwaretestingboard.com/customer/account/create/']"
   },
   "createAccountPage": {
@@ -12,6 +12,14 @@
     "confirmPassword": "#password-confirmation",
     "createAccountButton" : "button[title='Create an Account'] span"
 
-  
+  },
+
+  "homePage" : {
+    "whatIsNew" : "#ui-id-3",
+    "hoodAndSwtshrt" : "li [href='https://magento.softwaretestingboard.com/women/tops-women/hoodies-and-sweatshirts-women.html']"
+    
+
+
+
   }
 }

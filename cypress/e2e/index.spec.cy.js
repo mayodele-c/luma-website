@@ -1,9 +1,9 @@
 describe('Luma Flow', () => {
 
 
-  it('homepage', () => {
+  it('landingPage', () => {
 
-    cy.homepage()
+    cy.landingPage()
    
   })
 
@@ -13,4 +13,11 @@ describe('Luma Flow', () => {
 
 
   })
+
+  it('homePage', () => {
+
+    cy.homePage()
+  })
+
+
 })
