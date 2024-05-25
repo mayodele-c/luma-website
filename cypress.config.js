@@ -3,6 +3,7 @@ const { defineConfig } = require("cypress");
 module.exports = defineConfig({
   e2e: {
     baseUrl: "https://magento.softwaretestingboard.com/",
+    pageLoadTimeout : 50000,
     defaultCommandTimeout: 10000,
     experimentalRunAllSpecs: true,
     experimentalWebKitSupport: true,
