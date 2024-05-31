@@ -19,5 +19,11 @@ describe('Luma Flow', () => {
     cy.homePage()
   })
 
+  it('hoodiesAndSwtshrt', () => {
+
+    cy.hoodiesAndSwtshrtPage()
+
+  })
+
 
 })

@@ -17,9 +17,27 @@
   "homePage" : {
     "whatIsNew" : "#ui-id-3",
     "hoodAndSwtshrt" : "li [href='https://magento.softwaretestingboard.com/women/tops-women/hoodies-and-sweatshirts-women.html']"
-    
 
+
+  },
+
+  "hoodiesAndSwtshrtPage" : {
+    "makeParentVisible" : "div[class = 'toolbar-sorter sorter']",
+    "sortBy" : ".sorter-options",
+    "sleeveSwtshrt" : "li [href='https://magento.softwaretestingboard.com/ariel-roll-sleeve-sweatshirt.html']",
+    "inStock" : "div[ class = 'stock available'] span",
+    "medium" : "#option-label-size-143-item-169",
+    "purple" : "#option-label-color-93-item-57",
+    "quantity" : "#qty",
+    "scroll" : ".fotorama__arr__arr",
+    "addToCart" : "#product-addtocart-button",
+    "successMsg" : "#maincontent",
+    "cart" : "div[class = 'minicart-wrapper']",
+    "seeDetails" : "span[role='tab']",
+    "checkoutBtn" : "#top-cart-btn-checkout"
 
 
   }
+
+
 }

@@ -1,5 +1,6 @@
 let sel
 import { faker } from '@faker-js/faker';
+const checkStock = 'In stock';
 before(()  => {
     Cypress.on('uncaught:exception', () => {
         return false
@@ -41,3 +42,42 @@ Cypress.Commands.add('homePage', () => {
 
 
 })
+
+Cypress.Commands.add('hoodiesAndSwtshrtPage', () => {
+    cy.get(sel.hoodiesAndSwtshrtPage.makeParentVisible).invoke('css', 'display', 'block') // Make the parent element visible
+    cy.get(sel.hoodiesAndSwtshrtPage.sortBy).eq(0).select('Price')
+    cy.get(sel.hoodiesAndSwtshrtPage.sortBy).eq(0).select('Position')
+    cy.get(sel.hoodiesAndSwtshrtPage.sortBy).eq(0).select('Product Name')
+    cy.get(sel.hoodiesAndSwtshrtPage.sleeveSwtshrt).eq(0).realHover()
+    cy.get(sel.hoodiesAndSwtshrtPage.sleeveSwtshrt).eq(0).click()
+
+    cy.get(sel.hoodiesAndSwtshrtPage.inStock).invoke('text').then((message) => {
+        expect(message).to.contain('In stock')
+    
+        if (message) {
+            // Text found, click the button
+            cy.get(sel.hoodiesAndSwtshrtPage.medium).should('be.visible').click()
+            cy.log('Text found and button clicked')
+        } else {
+            // Text not found, navigate back
+            cy.log('Text not found, navigating back')
+            cy.get(sel.homePage.hoodAndSwtshrt).eq(1).click({force: true})
+        }
+    });
+
+    cy.get(sel.hoodiesAndSwtshrtPage.purple).should('be.visible').click()
+    cy.get(sel.hoodiesAndSwtshrtPage.quantity).clear()
+    cy.get(sel.hoodiesAndSwtshrtPage.quantity).type('2')
+    cy.get(sel.hoodiesAndSwtshrtPage.scroll).eq(0).click()
+    cy.get(sel.hoodiesAndSwtshrtPage.addToCart).click()
+    cy.get(sel.hoodiesAndSwtshrtPage.successMsg).should('include.text', 'You added')
+    cy.get(sel.hoodiesAndSwtshrtPage.cart).click()
+    cy.get(sel.hoodiesAndSwtshrtPage.seeDetails).click()
+    cy.get(sel.hoodiesAndSwtshrtPage.checkoutBtn).click()
+
+})
+    
+    
+    
+   
+
