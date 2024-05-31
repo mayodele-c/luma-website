@@ -1,14 +1,14 @@
 let sel
 import { faker } from '@faker-js/faker';
 const checkStock = 'In stock';
-before(()  => {
+before(() => {
     Cypress.on('uncaught:exception', () => {
         return false
     })
 
     cy.fixture('selectors').then((selectors) => {
         sel = selectors
-      })
+    })
 
     cy.visit('/')
 
@@ -32,14 +32,11 @@ Cypress.Commands.add('createAccount', () => {
     cy.get(sel.createAccountPage.confirmPassword).type('Aa1234!#')
     cy.get(sel.createAccountPage.createAccountButton).click()
 
-
 })
 
 Cypress.Commands.add('homePage', () => {
     cy.get(sel.homePage.whatIsNew).click()
-    cy.get(sel.homePage.hoodAndSwtshrt).eq(1).click({force: true})
-    
-
+    cy.get(sel.homePage.hoodAndSwtshrt).eq(1).click({ force: true })
 
 })
 
@@ -53,7 +50,7 @@ Cypress.Commands.add('hoodiesAndSwtshrtPage', () => {
 
     cy.get(sel.hoodiesAndSwtshrtPage.inStock).invoke('text').then((message) => {
         expect(message).to.contain('In stock')
-    
+
         if (message) {
             // Text found, click the button
             cy.get(sel.hoodiesAndSwtshrtPage.medium).should('be.visible').click()
@@ -61,7 +58,7 @@ Cypress.Commands.add('hoodiesAndSwtshrtPage', () => {
         } else {
             // Text not found, navigate back
             cy.log('Text not found, navigating back')
-            cy.get(sel.homePage.hoodAndSwtshrt).eq(1).click({force: true})
+            cy.get(sel.homePage.hoodAndSwtshrt).eq(1).click({ force: true })
         }
     });
 
@@ -76,8 +73,8 @@ Cypress.Commands.add('hoodiesAndSwtshrtPage', () => {
     cy.get(sel.hoodiesAndSwtshrtPage.checkoutBtn).click()
 
 })
-    
-    
-    
-   
+
+
+
+
 
