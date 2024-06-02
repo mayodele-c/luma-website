@@ -74,6 +74,21 @@ Cypress.Commands.add('hoodiesAndSwtshrtPage', () => {
 
 })
 
+Cypress.Commands.add('shippingAddressPage', () => {
+    cy.get(sel.shippingAddressPage.company).should('be.visible').and('exist').type(faker.company.name())
+    cy.get(sel.shippingAddressPage.streetAdd).type(faker.address.streetAddress())
+    cy.get(sel.shippingAddressPage.city).type(faker.address.city())
+    cy.get(sel.shippingAddressPage.state).select('California')
+    cy.get(sel.shippingAddressPage.postCode).type(faker.address.zipCode())
+    cy.get(sel.shippingAddressPage.phoneNumber).type(faker.phone.number())
+    cy.get(sel.shippingAddressPage.shippingMethod).eq(1).click()
+    cy.get(sel.shippingAddressPage.next).click()
+    cy.get(sel.shippingAddressPage.placeOrder).should('be.visible').and('exist').click()
+    cy.get(sel.shippingAddressPage.orderMsg).should('be.visible').and('exist').should('include.text', 'Your order number is: ')
+    cy.get(sel.shippingAddressPage.continueShopping).click()
+
+})
+
 
 
 

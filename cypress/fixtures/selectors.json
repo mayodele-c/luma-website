@@ -37,6 +37,23 @@
     "checkoutBtn" : "#top-cart-btn-checkout"
 
 
+  },
+
+  "shippingAddressPage" : {
+    "company" : "input[name = 'company']",
+    "streetAdd" : "input[name = 'street[0]']",
+    "city" : "input[name = 'city']",
+    "state" : "select[name ='region_id']",
+    "postCode" : "input[name = 'postcode']",
+    "phoneNumber" : "input[name = 'telephone']",
+    "shippingMethod" : "input[type = 'radio']",
+    "next" : ".button.action.continue.primary",
+    "placeOrder" : ".action.primary.checkout",
+    "orderMsg" : ".checkout-success",
+    "continueShopping" : ".action.primary.continue"
+
+
+
   }
 
 

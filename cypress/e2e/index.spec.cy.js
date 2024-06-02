@@ -25,5 +25,12 @@ describe('Luma Flow', () => {
 
   })
 
+  it('shippingAddress', () => {
+
+    cy.shippingAddressPage()
+
+
+  })
+
 
 })
