@@ -24,12 +24,14 @@ Cypress.Commands.add('landingPage', () => {
 
 Cypress.Commands.add('createAccount', () => {
 
+    const password = Cypress.env('password');
+
     cy.get(sel.createAccountPage.createAccountPageMsg).should('have.text', 'Create New Customer Account')
     cy.get(sel.createAccountPage.firstName).type(faker.person.firstName())
     cy.get(sel.createAccountPage.lastName).type(faker.person.lastName())
     cy.get(sel.createAccountPage.email).type(faker.internet.email())
-    cy.get(sel.createAccountPage.password).type('Aa1234!#')
-    cy.get(sel.createAccountPage.confirmPassword).type('Aa1234!#')
+    cy.get(sel.createAccountPage.password).type(password)
+    cy.get(sel.createAccountPage.confirmPassword).type(password)
     cy.get(sel.createAccountPage.createAccountButton).click()
 
 })

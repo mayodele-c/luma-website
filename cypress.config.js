@@ -11,6 +11,9 @@ module.exports = defineConfig({
     viewportWidth: 1500,
     watchForFileChanges: false,
     testIsolation: false,
+    env : {
+      "password" : "Aa1234!#"
+    },
     setupNodeEvents(on, config) {
       // implement node event listeners here
     },
