@@ -32,5 +32,11 @@ describe('Luma Flow', () => {
 
   })
 
+  it('logOut', () => {
+    
+    cy.logOutPage()
+
+  })
+
 
 })

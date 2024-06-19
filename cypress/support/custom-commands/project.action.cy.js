@@ -87,7 +87,15 @@ Cypress.Commands.add('shippingAddressPage', () => {
     cy.get(sel.shippingAddressPage.next).click()
     cy.get(sel.shippingAddressPage.placeOrder).should('be.visible').and('exist').click()
     cy.get(sel.shippingAddressPage.orderMsg).should('be.visible').and('exist').should('include.text', 'Your order number is: ')
-    cy.get(sel.shippingAddressPage.continueShopping).click()
+   // cy.get(sel.shippingAddressPage.continueShopping).click()
+
+})
+
+Cypress.Commands.add('logOutPage', () => {
+    cy.get(sel.logOutPage.dropdown).should('be.visible').eq(0).click()
+    cy.get(sel.logOutPage.signOut).eq(0).click()
+
+
 
 })
 

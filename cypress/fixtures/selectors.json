@@ -54,6 +54,13 @@
 
 
 
+  },
+
+  "logOutPage" : {
+    "dropdown" : "span[class = 'customer-name']",
+    "signOut" : "div[class = 'customer-menu'] li[class = 'authorization-link']"
+
+
   }
 
 
